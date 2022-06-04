@@ -23,6 +23,15 @@ def install_oneflow():
             "oneflow==0.7.0+cpu",
         ]
     )
+    subprocess.check_call(
+        [
+            sys.executable,
+            "-m",
+            "pip",
+            "install",
+            "protobuf==3.20.1",
+        ]
+    )
 
 
 try:
