@@ -25,8 +25,11 @@ def install_oneflow():
     )
 
 
-install_oneflow()
-import oneflow as flow
+try:
+    import oneflow as flow
+except:
+    install_oneflow()
+    import oneflow as flow
 
 ConstantLR_CODE = """oneflow.optim.lr_scheduler.ConstantLR(
                 optimizer: Optimizer,
