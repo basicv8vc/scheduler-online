@@ -2,4 +2,4 @@ altair
 pandas
 streamlit
 numpy
-oneflow==0.7.0+cpu
+oneflow==0.7.0
