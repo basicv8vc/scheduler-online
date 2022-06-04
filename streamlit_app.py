@@ -1,13 +1,32 @@
 import time
 import re
+import subprocess
+import sys
 
 import streamlit as st
-import oneflow as flow
 
 import numpy as np
 import pandas as pd
 import altair as alt
 from altair import X, Y, Axis
+
+
+def install_oneflow():
+    subprocess.check_call(
+        [
+            sys.executable,
+            "-m",
+            "pip",
+            "install",
+            "-f",
+            "https://release.oneflow.info",
+            "oneflow==0.7.0+cpu",
+        ]
+    )
+
+
+install_oneflow()
+import oneflow as flow
 
 ConstantLR_CODE = """oneflow.optim.lr_scheduler.ConstantLR(
                 optimizer: Optimizer,
